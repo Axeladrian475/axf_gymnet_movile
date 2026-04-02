@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Fondo oscuro principal -->
+    <color name="bg_dark">#0F0F0F</color>
+    <color name="surface">#1A1A1A</color>
+    <color name="surface_elevated">#222222</color>
+    <color name="surface_card">#252525</color>
+
+    <!-- Acento naranja AXF -->
+    <color name="orange_primary">#FF6B00</color>
+    <color name="orange_light">#FF8C38</color>
+    <color name="orange_dark">#CC5500</color>
+
+    <!-- Textos -->
+    <color name="white">#FFFFFF</color>
+    <color name="text_secondary">#CCCCCC</color>
+    <color name="text_muted">#777777</color>
+
+    <!-- Estados -->
+    <color name="success">#2ECC71</color>
+    <color name="error">#E74C3C</color>
+    <color name="warning">#F39C12</color>
+    <color name="info">#3498DB</color>
+
+    <!-- Strikes -->
+    <color name="strike_1">#F39C12</color>
+    <color name="strike_2">#E67E22</color>
+    <color name="strike_3">#E74C3C</color>
+
+    <!-- Categorías de reporte -->
+    <color name="cat_maquina">#3498DB</color>
+    <color name="cat_banio">#9B59B6</color>
+    <color name="cat_limpieza">#1ABC9C</color>
+    <color name="cat_personal">#E74C3C</color>
+    <color name="cat_otro">#95A5A6</color>
+
+    <!-- Inputs -->
+    <color name="input_stroke">#333333</color>
+    <color name="input_stroke_active">#FF6B00</color>
+
+    <!-- BottomNav -->
+    <color name="nav_active">#FF6B00</color>
+    <color name="nav_inactive">#555555</color>
+
+    <!-- Dividers -->
+    <color name="divider">#2A2A2A</color>
+
+    <!-- Legacy required -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
 </resources>

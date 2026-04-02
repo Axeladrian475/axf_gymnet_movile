@@ -1,3 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">axf_movile</string>
+    <string name="app_name">AXF GymNet</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+
+    <!-- Bottom Nav -->
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_entrenamiento">Entreno</string>
+    <string name="nav_nutricion">Nutrición</string>
+    <string name="nav_reportes">Reportes</string>
+    <string name="nav_chat">Chat</string>
+
+    <!-- Home -->
+    <string name="suscripcion_activa">Suscripción Activa</string>
+    <string name="suscripcion_inactiva">Sin suscripción activa</string>
+    <string name="puntos">puntos</string>
+    <string name="racha">racha</string>
+
+    <!-- Reportes -->
+    <string name="nuevo_reporte">Nuevo reporte</string>
+    <string name="mis_reportes">Mis reportes</string>
+    <string name="reportes_publicos">Reportes activos</string>
+    <string name="sumarse_reporte">Sumarse a este reporte</string>
+    <string name="ya_sumado">Ya estás sumado</string>
+    <string name="reenviar_gerente">Reenviar al gerente</string>
+    <string name="reporte_privado">Hacer reporte privado</string>
+    <string name="selecciona_sucursal">Selecciona la sucursal</string>
+    <string name="selecciona_categoria">Selecciona una categoría</string>
+    <string name="descripcion_problema">Describe el problema</string>
+    <string name="foto_opcional">Foto (opcional)</string>
+    <string name="enviar_reporte">Enviar reporte</string>
+
+    <!-- Categorías -->
+    <string name="cat_maquina">Máquina Dañada</string>
+    <string name="cat_banio">Baño Tapado</string>
+    <string name="cat_limpieza">Problema de Limpieza</string>
+    <string name="cat_personal">Reporte de Personal</string>
+    <string name="cat_otro">Otro</string>
+
+    <!-- Estados -->
+    <string name="estado_abierto">Abierto</string>
+    <string name="estado_en_proceso">En Proceso</string>
+    <string name="estado_resuelto">Resuelto</string>
+
+    <!-- Errores -->
+    <string name="error_conexion">Sin conexión. Verifica tu red.</string>
+    <string name="error_generico">Algo salió mal. Intenta de nuevo.</string>
+    <string name="campo_requerido">Este campo es requerido</string>
 </resources>

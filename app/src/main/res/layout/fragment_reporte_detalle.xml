@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_dark"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/white"
+            app:title="Detalle del Reporte"
+            app:titleTextColor="@color/white"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- ── Banner de strikes (visible si num_strikes > 0) ────────── -->
+            <LinearLayout
+                android:id="@+id/bannerStrikes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_strike_1"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="⚡ Alerta de Escalada"
+                        android:textColor="@color/warning"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-bold"/>
+
+                    <TextView
+                        android:id="@+id/tvStrikesBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Strike 1"
+                        android:textColor="@color/warning"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="3dp"
+                        android:background="@drawable/bg_strike_1"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvStrikesDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tu reporte ha activado una alerta interna. El personal ha sido notificado para dar seguimiento."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"/>
+
+                <!-- Botón reenviar al gerente (visible solo si strikes == 3) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnReenviarGerente"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="🔴 Reenviar al Gerente"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/error"
+                    app:cornerRadius="10dp"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <!-- ── Header: categoría + estado ─────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <View
+                    android:id="@+id/dotCategoria"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/circle_orange"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvCategoria"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Máquina Dañada"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-black"/>
+
+                <TextView
+                    android:id="@+id/tvEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Abierto"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp"
+                    android:background="@drawable/bg_estado_abierto"/>
+
+            </LinearLayout>
+
+            <!-- ── Descripción ─────────────────────────────────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="@color/surface_card"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Descripción"
+                        android:textColor="@color/text_muted"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.08"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvDescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Descripción completa del reporte."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="15sp"
+                        android:lineSpacingMultiplier="1.4"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Foto (si existe) ─────────────────────────────────────── -->
+            <ImageView
+                android:id="@+id/ivFoto"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_image_placeholder"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                android:contentDescription="Foto del reporte"/>
+
+            <!-- ── Info: sucursal, fecha, suscriptor ──────────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="@color/surface_card"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Sucursal -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_location" android:layout_marginEnd="10dp"/>
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sucursal"
+                            android:textColor="@color/text_muted" android:textSize="12sp"/>
+
+                        <TextView android:id="@+id/tvSucursal"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Sucursal Norte"
+                            android:textColor="@color/white" android:textSize="13sp"
+                            android:fontFamily="sans-serif-medium"/>
+
+                    </LinearLayout>
+
+                    <!-- Reportado por -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_person" android:layout_marginEnd="10dp"/>
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Reportado por"
+                            android:textColor="@color/text_muted" android:textSize="12sp"/>
+
+                        <TextView android:id="@+id/tvReportadoPor"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Axel Aguirre"
+                            android:textColor="@color/white" android:textSize="13sp"
+                            android:fontFamily="sans-serif-medium"/>
+
+                    </LinearLayout>
+
+                    <!-- Fecha -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_notification" android:layout_marginEnd="10dp"/>
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Fecha"
+                            android:textColor="@color/text_muted" android:textSize="12sp"/>
+
+                        <TextView android:id="@+id/tvFecha"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="15 Abr 2026"
+                            android:textColor="@color/white" android:textSize="13sp"
+                            android:fontFamily="sans-serif-medium"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Botón sumarse (solo reportes públicos ajenos) ──────────── -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSumarse"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="👥 Sumarse a este reporte"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/orange_primary"
+                app:backgroundTint="@color/surface_elevated"
+                app:strokeColor="@color/orange_primary"
+                app:strokeWidth="1dp"
+                app:cornerRadius="14dp"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"/>
+
+            <!-- Ya sumado -->
+            <TextView
+                android:id="@+id/tvYaSumado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✅ Ya estás sumado a este reporte. Te notificaremos cuando haya actualizaciones."
+                android:textColor="@color/success"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:padding="12dp"
+                android:background="@drawable/bg_estado_resuelto"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"/>
+
+            <!-- Sumados count -->
+            <TextView
+                android:id="@+id/tvSumados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="👥 0 personas se han sumado a este reporte"
+                android:textColor="@color/text_muted"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

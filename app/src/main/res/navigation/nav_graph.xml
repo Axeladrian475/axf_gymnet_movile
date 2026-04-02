@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.axf_movile.ui.home.HomeFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/entrenamientoFragment"
+        android:name="com.example.axf_movile.ui.entrenamiento.EntrenamientoFragment"
+        android:label="Entrenamiento"
+        tools:layout="@layout/fragment_entrenamiento">
+        <action
+            android:id="@+id/action_entrenamiento_to_rutinaDetalle"
+            app:destination="@id/rutinaDetalleFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/rutinaDetalleFragment"
+        android:name="com.example.axf_movile.ui.entrenamiento.RutinaDetalleFragment"
+        android:label="Rutina"
+        tools:layout="@layout/fragment_rutina_detalle">
+        <argument
+            android:name="id_rutina"
+            app:argType="integer"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nutricionFragment"
+        android:name="com.example.axf_movile.ui.nutricion.NutricionFragment"
+        android:label="Nutrición"
+        tools:layout="@layout/fragment_nutricion"/>
+
+    <fragment
+        android:id="@+id/dietaDetalleFragment"
+        android:name="com.example.axf_movile.ui.nutricion.DietaDetalleFragment"
+        android:label="Dieta"
+        tools:layout="@layout/fragment_dieta_detalle">
+        <argument
+            android:name="id_dieta"
+            app:argType="integer"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/registroFisicoDetalleFragment"
+        android:name="com.example.axf_movile.ui.nutricion.RegistroFisicoDetalleFragment"
+        android:label="Registro Físico"
+        tools:layout="@layout/fragment_registro_fisico_detalle">
+        <argument
+            android:name="id_registro"
+            app:argType="integer"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportesFragment"
+        android:name="com.example.axf_movile.ui.reportes.ReportesFragment"
+        android:label="Reportes"
+        tools:layout="@layout/fragment_reportes">
+        <action
+            android:id="@+id/action_reportes_to_nuevoReporte"
+            app:destination="@id/nuevoReporteFragment"/>
+        <action
+            android:id="@+id/action_reportes_to_detalleReporte"
+            app:destination="@id/reporteDetalleFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nuevoReporteFragment"
+        android:name="com.example.axf_movile.ui.reportes.NuevoReporteFragment"
+        android:label="Nuevo Reporte"
+        tools:layout="@layout/fragment_nuevo_reporte"/>
+
+    <fragment
+        android:id="@+id/reporteDetalleFragment"
+        android:name="com.example.axf_movile.ui.reportes.ReporteDetalleFragment"
+        android:label="Detalle Reporte"
+        tools:layout="@layout/fragment_reporte_detalle">
+        <argument
+            android:name="id_reporte"
+            app:argType="integer"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatListFragment"
+        android:name="com.example.axf_movile.ui.chat.ChatListFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat_list">
+        <action
+            android:id="@+id/action_chatList_to_conversacion"
+            app:destination="@id/chatConversacionFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatConversacionFragment"
+        android:name="com.example.axf_movile.ui.chat.ChatConversacionFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat_conversacion">
+        <argument
+            android:name="id_personal"
+            app:argType="integer"/>
+        <argument
+            android:name="nombre_personal"
+            app:argType="string"/>
+    </fragment>
+
+</navigation>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/surface_card"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Row: Categoría chip + Estado badge + Strikes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <!-- Dot indicador categoría -->
+            <View
+                android:id="@+id/dotCategoria"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/circle_orange"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Chip categoría -->
+            <TextView
+                android:id="@+id/tvCategoria"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Máquina Dañada"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"/>
+
+            <!-- Estado badge -->
+            <TextView
+                android:id="@+id/tvEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abierto"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:background="@drawable/bg_estado_abierto"
+                android:layout_marginStart="8dp"/>
+
+            <!-- Strikes badge (solo si > 0) -->
+            <TextView
+                android:id="@+id/tvStrikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡ 1"
+                android:textColor="@color/warning"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:layout_marginStart="8dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <!-- Descripción -->
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción del reporte..."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Foto preview (opcional) -->
+        <ImageView
+            android:id="@+id/ivFoto"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_image_placeholder"
+            app:layout_constraintTop_toBottomOf="@id/tvDescripcion"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"
+            android:contentDescription="Foto del reporte"/>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Footer row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Sucursal -->
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_location"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:id="@+id/tvSucursal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sucursal Centro"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp"/>
+
+            <!-- Sumados -->
+            <TextView
+                android:id="@+id/tvSumados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👥 3"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp"
+                android:layout_marginEnd="12dp"
+                android:visibility="gone"/>
+
+            <!-- Fecha -->
+            <TextView
+                android:id="@+id/tvFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hace 2 horas"
+                android:textColor="@color/text_muted"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

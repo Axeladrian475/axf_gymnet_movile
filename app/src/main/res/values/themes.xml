@@ -1,9 +1,49 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Axf_movile" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AxfMovile" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/orange_primary</item>
+        <item name="colorPrimaryVariant">@color/orange_dark</item>
+        <item name="colorOnPrimary">@color/bg_dark</item>
+        <item name="colorSecondary">@color/orange_light</item>
+        <item name="colorOnSecondary">@color/bg_dark</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorError">@color/error</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="textColorPrimary">@color/white</item>
+        <item name="textColorSecondary">@color/text_secondary</item>
+
+        <!-- TextInputLayout dark theme -->
+        <item name="boxStrokeColor">@color/input_stroke</item>
+        <item name="hintTextColor">@color/text_muted</item>
+
+        <!-- MaterialButton -->
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
-    <style name="Theme.Axf_movile" parent="Base.Theme.Axf_movile" />
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:letterSpacing">0.05</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <!-- Estilo para chips de categoría -->
+    <style name="Widget.App.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textColor">@color/white</item>
+        <item name="chipBackgroundColor">@color/surface_elevated</item>
+        <item name="chipStrokeColor">@color/input_stroke</item>
+        <item name="chipStrokeWidth">1dp</item>
+    </style>
+
+    <!-- Bottom sheet oscuro -->
+    <style name="Theme.App.BottomSheet" parent="Theme.MaterialComponents.DayNight.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.App.BottomSheet</item>
+        <item name="android:colorBackground">@color/surface</item>
+    </style>
+
+    <style name="Widget.App.BottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
 </resources>
